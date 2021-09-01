@@ -32,7 +32,7 @@ jobs:
       if: success()
       run: |        
         docker buildx build \
-            --platform  ${DOCKER_TARGET_PLATFORM} \
-            --output "type=image,push=true" \
-            --tag ${DOCKER_IMAGE}:latest ${DOCKER_IMAGE}:${GITHUB_RUN_NUMBER} \
-            --file ./docker/amd64/Dockerfile ./
+          --platform  ${DOCKER_TARGET_PLATFORM} \
+          --output "type=image,push=true" \
+          --tag ${DOCKER_IMAGE}:latest ${DOCKER_IMAGE}:${GITHUB_RUN_NUMBER} \
+          --file ./docker/amd64/Dockerfile ./
