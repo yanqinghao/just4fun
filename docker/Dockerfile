@@ -8,6 +8,6 @@ WORKDIR /just4fun
 
 RUN pip install --upgrade pip && pip install -r requirements.txt
 
-ENTRYPOINT [ "/sbin/my_init", "--" ]
+ENTRYPOINT [ "/usr/local/bin/dumb-init", "--" ]
 
 CMD [ "tools/run.sh" ]
