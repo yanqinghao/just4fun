@@ -39,5 +39,5 @@ jobs:
 
     - name: Run Buildx (push image)
       if: success()
-      run: |        
-        docker buildx build --platform  ${DOCKER_TARGET_PLATFORM} --output "type=image,push=true" -t ${DOCKER_IMAGE}:latest ${DOCKER_IMAGE}:${GITHUB_RUN_NUMBER} --file ./docker/amd64/Dockerfile ./
+      run: |
+        docker buildx build --platform ${DOCKER_TARGET_PLATFORM} --output "type=image,push=true" -t ${DOCKER_IMAGE}:latest ${DOCKER_IMAGE}:${GITHUB_RUN_NUMBER} --file ./docker/amd64/Dockerfile ./
