@@ -1,6 +1,6 @@
 FROM python:3.8
 
-RUN apt install dumb-init && pip install --upgrade pip && \
+RUN apt update && apt install dumb-init -y && pip install --upgrade pip && \
     pip install -r requirements.txt
 
 ENTRYPOINT [ "/sbin/my_init", "--" ]
