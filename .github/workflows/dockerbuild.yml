@@ -40,4 +40,7 @@ jobs:
     - name: Run Buildx (push image)
       if: success()
       run: |
-        docker buildx build --platform linux/386,linux/amd64,linux/arm/v6,linux/arm/v7 --output "type=image,push=true" -t yanqinghao/just4fun:latest --file ./docker/amd64/Dockerfile ./
+        docker buildx build --platform ${{ DOCKER_TARGET_PLATFORM }} \
+          --output "type=image,push=true" \
+          -t yanqinghao/just4fun:latest \
+          --file ./docker/Dockerfile .
