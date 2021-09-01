@@ -1,1 +1,1 @@
-gunicorn --bind 0.0.0.0:5000 api_server.server:app --access-logfile log
+gunicorn --bind 0.0.0.0:5000 api_server.server:app -D --access-logfile log
