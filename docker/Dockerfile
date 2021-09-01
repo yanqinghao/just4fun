@@ -12,4 +12,4 @@ RUN chmod a+x tools/run.sh
 
 ENTRYPOINT [ "/usr/bin/dumb-init", "--" ]
 
-CMD [ "tools/run.sh" ]
+CMD [ "sh", "-c", "tools/run.sh" ]
