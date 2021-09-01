@@ -1,1 +1,1 @@
-gunicorn --bind 0.0.0.0:5000 api_server.server:app
+gunicorn --bind 0.0.0.0:5000 api_server.server:app --daemon --access-logfile log
