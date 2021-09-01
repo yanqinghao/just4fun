@@ -42,5 +42,5 @@ jobs:
         docker buildx build --platform ${DOCKER_TARGET_PLATFORM} \
           --output "type=image,push=true" \
           -t ${DOCKER_IMAGE} \
-          -t ${DOCKER_IMAGE}:${GITHUB_RUN_NUMBER} \
+          -t ${DOCKER_IMAGE}:${{ steps.get_version.outputs.VERSION }} \
           --file ./docker/Dockerfile .
