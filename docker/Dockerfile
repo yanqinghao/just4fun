@@ -1,6 +1,6 @@
 FROM python:3.8-alpine3.13
 
-RUN apt update && apt install dumb-init -y
+RUN apk update && apk add dumb-init
 
 COPY . /just4fun
 
