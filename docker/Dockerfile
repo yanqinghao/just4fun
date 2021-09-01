@@ -8,6 +8,8 @@ WORKDIR /just4fun
 
 RUN pip install --upgrade pip && pip install -r requirements.txt
 
-ENTRYPOINT [ "/usr/local/bin/dumb-init", "--" ]
+RUN chmod a+x tools/run.sh
+
+ENTRYPOINT [ "/usr/bin/dumb-init", "--" ]
 
 CMD [ "tools/run.sh" ]
